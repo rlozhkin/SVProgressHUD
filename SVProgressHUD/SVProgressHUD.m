@@ -1026,7 +1026,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
 }
 
 - (UIView *)indefiniteAnimatedView{
-    if(_customAnimationView != nil) {
+    if(_customAnimationView != nil && _defaultAnimationType == SVProgressHUDAnimationTypeCustom) {
         return _customAnimationView;
     } else if(_indefiniteAnimatedView == nil){
         _indefiniteAnimatedView = (self.defaultAnimationType == SVProgressHUDAnimationTypeFlat) ? [self createIndefiniteAnimatedView] : [self createActivityIndicatorView];
